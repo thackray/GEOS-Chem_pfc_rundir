@@ -189,6 +189,7 @@ Warnings:                    3
     --> RCP_60            :       false
     --> RCP_85            :       false
     --> QFED2             :       false
+    --> PFCA              :       true
 # -----------------------------------------------------------------------------
 100     Custom            : off   - 
 101     SeaFlux           : on    DMS/ACET
@@ -267,6 +268,15 @@ Warnings:                    3
 
 0 GEIA_NH3_NATU $ROOT/NH3/v2014-07/NH3_geos.4x5.nc         NH3_NATU    1990/1-12/1/0 C xy  kg/m2/s NH3 - 3 1
 )))GEIA
+
+# PFCA
+(((PFCA
+0 FTOH_max            /net/fs03/d1/thackray/data/FTOH_max.01x01.nc               FTOH  1970-2008/1/1/0 C xy kg/m2/s emi_FTOH  1/40/25/30  1 2
+0 FTI_max             /net/fs03/d1/thackray/data/FTI_max.01x01.nc                FTI  1970-2008/1/1/0 C xy kg/m2/s emi_FTI  1/40/25/30  1 2
+0 FTOH_min            /net/fs03/d1/thackray/data/FTOH_min.01x01.nc               FTOH  1970-2008/1/1/0 C xy kg/m2/s emi_FTOH  1/40/25/30  1 2
+0 FTI_min             /net/fs03/d1/thackray/data/FTI_min.01x01.nc                FTI  1970-2008/1/1/0 C xy kg/m2/s emi_FTI  1/40/25/30  1 2
+)))PFCA
+
 
 #==============================================================================
 # --- EDGAR v4.2 ---
