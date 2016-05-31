@@ -114,14 +114,17 @@
 
 ROOT:                        /net/geoschem/data/gcgrid/gcdata/ExtData/HEMCO
 Logfile:                     HEMCO.log
+DiagnFile:                   HEMCO_DiagnFile.rc
 DiagnPrefix:                 HEMCO_diagnostics
-DiagnFreq:                   End
+DiagnFreq:                   Monthly
 Wildcard:                    *
 Separator:                   /
 Unit tolerance:              2
 Negative values:             2
 Verbose:                     3
 Warnings:                    3
+
+
 
 ### END SECTION SETTINGS ###
 
@@ -189,7 +192,8 @@ Warnings:                    3
     --> RCP_60            :       false
     --> RCP_85            :       false
     --> QFED2             :       false
-    --> PFCA              :       true
+    --> FTOH              :       true
+    --> FTI               :       true
 # -----------------------------------------------------------------------------
 100     Custom            : off   - 
 101     SeaFlux           : on    DMS/ACET
@@ -229,7 +233,7 @@ Warnings:                    3
     --> CO scale factor   :       1.0
     --> hydrophilic BC    :       0.2
     --> hydrophilic OC    :       0.5
-
+#115     PFCA              : on    FTOH/FTI
 ### END SECTION EXTENSION SWITCHES ###
 
 ###############################################################################
@@ -237,6 +241,22 @@ Warnings:                    3
 ###############################################################################
 
 # ExtNr	Name sourceFile	sourceVar sourceTime C/R/E SrcDim SrcUnit Species ScalIDs Cat Hier
+
+# PFCA
+(((FTOH
+0 PFCA_FTOH /net/fs03/d1/thackray/data/FTOH_max.01x01.nc emi_FTOH  1961-2016/1/1/0 C xy kg/m2/s FTOH  -  1 1
+)))FTOH
+(((FTI
+0 PFCA_FTI /net/fs03/d1/thackray/data/FTI_max.01x01.nc  emi_FTI  1961-2016/1/1/0 C xy kg/m2/s FTI  -  1 1
+)))FTI
+
+#(((FTOH
+#0 PFCA_FTOH 0.1    - 2006-2016/1/1/0 C xy kg/m2/s FTOH  1/40/25/30  1 2
+#)))FTOH
+#(((FTI
+#0 PFCA_FTI 0.1     - 2006-2016/1/1/0 C xy kg/m2/s FTI  1/40/25/30  1 2
+#)))FTI
+
 
 #==============================================================================
 # --- MACCity ---
@@ -269,13 +289,6 @@ Warnings:                    3
 0 GEIA_NH3_NATU $ROOT/NH3/v2014-07/NH3_geos.4x5.nc         NH3_NATU    1990/1-12/1/0 C xy  kg/m2/s NH3 - 3 1
 )))GEIA
 
-# PFCA
-(((PFCA
-0 FTOH_max            /net/fs03/d1/thackray/data/FTOH_max.01x01.nc               FTOH  1970-2008/1/1/0 C xy kg/m2/s emi_FTOH  1/40/25/30  1 2
-0 FTI_max             /net/fs03/d1/thackray/data/FTI_max.01x01.nc                FTI  1970-2008/1/1/0 C xy kg/m2/s emi_FTI  1/40/25/30  1 2
-0 FTOH_min            /net/fs03/d1/thackray/data/FTOH_min.01x01.nc               FTOH  1970-2008/1/1/0 C xy kg/m2/s emi_FTOH  1/40/25/30  1 2
-0 FTI_min             /net/fs03/d1/thackray/data/FTI_min.01x01.nc                FTI  1970-2008/1/1/0 C xy kg/m2/s emi_FTI  1/40/25/30  1 2
-)))PFCA
 
 
 #==============================================================================
@@ -1358,6 +1371,15 @@ Warnings:                    3
 114 FINN_DAILY_VEGTYP5 $ROOT/FINN/v2015-02/FINN_daily_$YYYY_0.25x0.25.compressed.nc   fire_vegtype5 $YYYY/1-12/1/0 C xy kg/m2/s * - 1 1
 114 FINN_DAILY_VEGTYP9 $ROOT/FINN/v2015-02/FINN_daily_$YYYY_0.25x0.25.compressed.nc   fire_vegtype9 $YYYY/1-12/1/0 C xy kg/m2/s * - 1 1
 )))FINN_daily
+
+
+# PFCA
+(((PFCA
+115 PFCA_FTOH /net/fs03/d1/thackray/data/FTOH_max.01x01.nc               FTOH  2006-2016/7/1/0 C xy kg/m2/s emi_FTOH  1/40/25/30  1 2
+115 PFCA_FTI /net/fs03/d1/thackray/data/FTI_max.01x01.nc                FTI  2006-2016/7/1/0 C xy kg/m2/s emi_FTI  1/40/25/30  1 2
+)))PFCA
+
+
 
 ###############################################################################
 ### NON-EMISSIONS DATA (subsection of BASE EMISSIONS SECTION)
