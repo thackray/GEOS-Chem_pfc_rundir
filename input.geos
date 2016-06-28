@@ -1,8 +1,8 @@
 GEOS-CHEM UNIT TEST SIMULATION: geos5_4x5_tropchem
 ------------------------+------------------------------------------------------
 %%% SIMULATION MENU %%% :
-Start YYYYMMDD, HHMMSS  : 20060701 000000
-End   YYYYMMDD, HHMMSS  : 20060801 000000
+Start YYYYMMDD, HHMMSS  : 20070101 000000
+End   YYYYMMDD, HHMMSS  : 20100101 000000
 Run directory           : ./
 Input restart file      : restart.4x5.geos5.YYYYMMDD
 Make new restart file?  : T
@@ -22,7 +22,7 @@ Global offsets I0, J0   : 0 0
 ------------------------+------------------------------------------------------
 %%% TRACER MENU %%%     : 
 Type of simulation      : 3
-Number of Tracers       : 80
+Number of Tracers       : 84
 Tracer Entries -------> : TR#   Name  g/mole   Tracer Members; () = emitted 
 Tracer #1               :   1   NO      30.0   (NO)
 Tracer #2               :   2   O3      48.0   (O3)
@@ -101,10 +101,14 @@ Tracer #74              :  74   FPAN1   491.0
 Tracer #75              :  75   PFOH    386.0
 Tracer #76              :  76   PFOA    414.0
 Tracer #77              :  77   PFNA    431.0
-Tracer #78              :  78   SCPFCA  364.0
-Tracer #79              :  79   FTI     415.0    (FTI)
-Tracer #80              :  80   FTOH    413.0    (FTOH)
-------------------------+------------------------------------------------------
+Tracer #78              :  78   SCPFCA  264.0
+Tracer #79              :  79   PF7OH   336.0
+Tracer #80              :  80   PF6OH   286.0
+Tracer #81              :  81   PFHPA   364.0
+Tracer #82              :  82   PFHXA   314.0
+Tracer #83              :  83   FTI     415.0    (FTI)
+Tracer #84              :  84   FTOH    413.0    (FTOH)
+-----------------------+-------------------------------------------------------
 %%% TRANSPORT MENU %%%  :
 Turn on Transport       : T
  => Fill Negative Values: T 
@@ -218,55 +222,55 @@ ND01: Rn/Pb/Be source   :  0   all
 ND02: Rn/Pb/Be decay    :  0   all             
 ND03: Hg emissions, P/L :  0   all                
 ND04: CO2 Sources       :  0   all                
-ND05: Sulfate prod/loss : 47   all               
-ND06: Dust aer source   :  1   all                
-ND07: Carbon aer source : 47   all                
-ND08: Seasalt aer source:  1   all                
+ND05: Sulfate prod/loss :  0   all               
+ND06: Dust aer source   :  0   all                
+ND07: Carbon aer source :  0   all                
+ND08: Seasalt aer source:  0   all                
 ND09: -                 :  0   all                
 ND10: -                 :  0   all                
-ND11: Acetone sources   :  1   all                 
+ND11: Acetone sources   :  0   all                 
 ND12: BL fraction       :  0   all              
-ND13: Sulfur sources    : 47   all                
+ND13: Sulfur sources    :  0   all                
 ND14: Cld conv mass flx :  0   all                
 ND15: BL mix mass flx   :  0   all                
 ND16: LS/Conv prec frac :  0   all               
 ND17: Rainout fraction  :  0   all            
 ND18: Washout fraction  :  0   all            
 ND19: CH4 loss          :  0   all            
-ND21: Optical depths    : 47   all            
-ND22: J-Values          : 47   1 2 7 8 9 11 13 14 20 44 46 47 49 50 51 58 59 64 65
+ND21: Optical depths    :  0   all            
+ND22: J-Values          :  0   1 2 7 8 9 11 13 14 20 44 46 47 49 50 51 58 59 64 65
       => JV time range  :      11 13
 ND24: E/W transpt flx   :  0   all
 ND25: N/S transpt flx   :  0   all
 ND26: U/D transpt flx   :  0   all
 ND27: Strat NOx,Ox,HNO3 :  0   1 2 7
-ND28: Biomass emissions :  1   1 4 5 9 10 11 18 19 20 21 26 30 34 35
-ND29: CO sources        :  1   all
+ND28: Biomass emissions :  0   1 4 5 9 10 11 18 19 20 21 26 30 34 35
+ND29: CO sources        :  0   all
 ND30: Land Map          :  0   all
 ND31: Surface pressure  :  0   all
-ND32: NOx sources       :  1   all
-ND33: Column tracer     :  1   67 68 69 70 71 72 73 74 75 76 77 78
-ND34: Biofuel emissions :  1   1 4 5 9 10 11 18 19 20 21
+ND32: NOx sources       :  0   all
+ND33: Column tracer     :  1   67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
+ND34: Biofuel emissions :  0   1 4 5 9 10 11 18 19 20 21
 ND35: Tracers at 500 mb :  0   all
-ND36: Anthro emissions  :  1   1 2 4 5 7 9 10 11 18 19 20 21
-ND37: Updraft scav frac : 47   all
-ND38: Cld Conv scav loss: 47   all
-ND39: Wetdep scav loss  : 47   all
+ND36: Anthro emissions  :  0   1 2 4 5 7 9 10 11 18 19 20 21
+ND37: Updraft scav frac : 47   67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
+ND38: Cld Conv scav loss: 47   67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
+ND39: Wetdep scav loss  : 47   67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
 ND41: Afternoon PBL ht  :  0   all
 ND42: SOA concentrations:  0   all
 ND43: Chem prod OH, HO2 : 47   all
   ==> OH/HO2 time range :       0 24   
-ND44: Drydep flx/vel    :  1   2 3 7 8 9 11 13 14 15 16 17 20 22 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 47 48 50 55 57 58 59 60 61 62 63 64
-ND45: Tracer Conc's     : 47   all 
+ND44: Drydep flx/vel    :  1   67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
+ND45: Tracer Conc's     : 47   1 2 3 19 21 64 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 
   ==> ND45 Time range   :       0 24
-ND46: Biogenic emissions:  1   all
+ND46: Biogenic emissions:  0   all
 ND47: 24-h avg trc conc :  0   all
 ND52: GAMMA HO2         :  0   all
 ND53: POPs Emissions    :  0   all
-ND54: Time in t'sphere  : 47   all
+ND54: Time in t'sphere  :  0   all
 ND55: Tropopause height : 47   all
-ND56: Lightning flashes : 47   all
-ND57: Potential T       : 47   all
+ND56: Lightning flashes :  0   all
+ND57: Potential T       :  0   all
 ND58: CH4 Emissions     :  0   all
 ND59: TOMAS aerosol emis:  0   all
 ND60: Wetland Frac      :  0   all
@@ -302,13 +306,13 @@ JMIN, JMAX of region    :  23  46
 LMIN, LMAX of region    :   1   5
 -------------------------------------------------------------------------------
 %%% ND50 MENU %%%       :
-Turn on ND50 diagnostic : T
+Turn on ND50 diagnostic : F
 24-hr avg timeser. file : ts_24h_avg_pfc.YYYYMMDD.bpch
 Output as HDF5?         : F
-Tracers to include      : 67 68 69 70 71 72 73 74 75 76 77 78
+Tracers to include      : 67 68 69 70 71 72 73 74 75 76 77 78 79 80
 IMIN, IMAX of region    :    1  72
-JMIN, JMAX of region    :   23  46
-LMIN, LMAX of region    :    1   5
+JMIN, JMAX of region    :    1  46
+LMIN, LMAX of region    :    1  47
 -------------------------------------------------------------------------------
 %%% ND51 MENU %%%       :
 Turn on ND51 diagnostic : F
